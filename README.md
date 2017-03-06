@@ -132,67 +132,67 @@ Udemy-Python_Bootcamp-Milestone Project 1
         game_on = True
         while game_on:
 
-        if turn ==0:
-            position= player_choice(board)
-            if space_check(board, position) and position>0 and position < 9:
-                print('position available')
-            else:
-                print('choose an other position between 0 and 9')
-
-            place_marker(board, player[0], position)
-            display_board(board)
-            y = win_check(board, player[0])
-            if y==1:
-                    print('You won the game.')
-                    game_on= False
-                    break;
-            else:
-                if full_board_check(board):
-                    print ('the game is a draw')
-                    break;
-
-                else:
-                    turn = 1
-                    print ('It is your opponents turn')
-
-
-            global avail
-            avail = [i for i in range(0, 9) if board[i] == '']
-            print('The available positions are: ' + str(avail))
-
-
-
-        elif turn == 1:
-            position=player_choice(board)
-            if space_check(board, position) and position>0 and position < 9:
-                print('position available')
-            else:
-                 print('choose an other position between 0 and 9')
-
-            place_marker(board, player[1], position)
-            display_board(board)
-            y = win_check(board, player[1])
-            if y==1:
-                print('You won the game.')
-                game_on= False
-                break;
-            else:
-                    if full_board_check(board):
-                        print ('the game is a draw')
-                        break;
-
-
+                if turn ==0:
+                    position= player_choice(board)
+                    if space_check(board, position) and position>0 and position < 9:
+                        print('position available')
                     else:
-                        turn =0
-                        print('It is your opponents turn')
+                        print('choose an other position between 0 and 9')
+
+                    place_marker(board, player[0], position)
+                    display_board(board)
+                    y = win_check(board, player[0])
+                    if y==1:
+                            print('You won the game.')
+                            game_on= False
+                            break;
+                    else:
+                        if full_board_check(board):
+                            print ('the game is a draw')
+                            break;
+
+                        else:
+                            turn = 1
+                            print ('It is your opponents turn')
+
+
+                    global avail
+                    avail = [i for i in range(0, 9) if board[i] == '']
+                    print('The available positions are: ' + str(avail))
 
 
 
-            avail = [i for i in range(0, 9) if board[i] == '']
-            print('The available positions are: ' + str(avail))
+                elif turn == 1:
+                    position=player_choice(board)
+                    if space_check(board, position) and position>0 and position < 9:
+                        print('position available')
+                    else:
+                         print('choose an other position between 0 and 9')
 
-    if not replay():
-         break
+                    place_marker(board, player[1], position)
+                    display_board(board)
+                    y = win_check(board, player[1])
+                    if y==1:
+                        print('You won the game.')
+                        game_on= False
+                        break;
+                    else:
+                            if full_board_check(board):
+                                print ('the game is a draw')
+                                break;
+
+
+                            else:
+                                turn =0
+                                print('It is your opponents turn')
+
+
+
+                    avail = [i for i in range(0, 9) if board[i] == '']
+                    print('The available positions are: ' + str(avail))
+
+        if not replay():
+        break
 
 
 
